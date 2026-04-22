@@ -1,0 +1,155 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DuplicateCandidateSet",
+  "type": "object",
+  "required": [
+    "type",
+    "schema_version",
+    "non_authoritative",
+    "lineage",
+    "candidates"
+  ],
+  "additionalProperties": false,
+
+  "properties": {
+    "type": {
+      "type": "string",
+      "const": "DuplicateCandidateSet"
+    },
+
+    "schema_version": {
+      "type": "string",
+      "const": "v1"
+    },
+
+    "non_authoritative": {
+      "type": "boolean",
+      "const": true
+    },
+
+    "lineage": {
+      "type": "object",
+      "required": [
+        "method",
+        "threshold",
+        "generated_at",
+        "source_artifact_count"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "type": "string",
+          "const": "duplicate_candidates_v1"
+        },
+        "threshold": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "source_artifact_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "candidate_id",
+          "similarity_basis",
+          "similarity_score",
+          "claim_refs",
+          "reasons",
+          "component_scores"
+        ],
+        "additionalProperties": false,
+
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{16}$"
+          },
+
+          "similarity_basis": {
+            "type": "string",
+            "const": "lexical"
+          },
+
+          "similarity_score": {
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+          },
+
+          "claim_refs": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["claim_id", "artifact_id"],
+              "additionalProperties": false,
+              "properties": {
+                "claim_id": { "type": "string" },
+                "artifact_id": { "type": "string" }
+              }
+            }
+          },
+
+          "reasons": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "high_token_overlap",
+                "shared_normalized_phrase",
+                "shared_anchor_text",
+                "low_edit_distance"
+              ]
+            },
+            "uniqueItems": true
+          },
+
+          "component_scores": {
+            "type": "object",
+            "required": [
+              "token_overlap",
+              "phrase_overlap",
+              "anchor_overlap",
+              "edit_similarity"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "token_overlap": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 1.0
+              },
+              "phrase_overlap": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 1.0
+              },
+              "anchor_overlap": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 1.0
+              },
+              "edit_similarity": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 1.0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

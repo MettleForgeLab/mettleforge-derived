@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mettleforge-derived"
+version = "0.1.0"
+description = "Non-authoritative derived artifact layer for Mettleforge (A′)"
+authors = [
+  { name = "Metalforge Lab" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+  "jsonschema>=4.0.0"
+]
+
+# Explicitly no dependency on monorepo packages
+# This repo must remain decoupled from authoritative systems
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["derived*"]
+
+[project.scripts]
+derive-duplicates = "derived.duplicate_candidates_v1:detect_duplicate_candidates"
+multiplicity-lens = "derived.multiplicity_lens_v1:multiplicity_lens"
