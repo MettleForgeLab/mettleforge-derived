@@ -1,4 +1,4 @@
-\# MettleForge Derived
+# MettleForge Derived
 
 
 
@@ -10,11 +10,11 @@ Produces \*\*non-authoritative artifacts\*\* from monorepo truth (A).
 
 
 
-\---
+---
 
 
 
-\## 🧭 Purpose
+## 🧭 Purpose
 
 
 
@@ -26,11 +26,11 @@ It exists to:
 
 
 
-\* derive structural signals from truth artifacts
+* derive structural signals from truth artifacts
 
-\* make those signals visible
+* make those signals visible
 
-\* preserve separation between \*\*truth, derivation, and interpretation\*\*
+* preserve separation between \*\*truth, derivation, and interpretation\*\*
 
 
 
@@ -38,19 +38,19 @@ It does \*\*not\*\*:
 
 
 
-\* modify source artifacts
+* modify source artifacts
 
-\* participate in runtime execution
+* participate in runtime execution
 
-\* introduce authority over A
-
-
-
-\---
+* introduce authority over A
 
 
 
-\## 🜇 System Placement
+---
+
+
+
+## 🜇 System Placement
 
 
 
@@ -94,35 +94,35 @@ A′ → LF (ingestion)
 
 
 
-\---
+---
 
 
 
-\## ∞ Core Properties
+## ∞ Core Properties
 
 
 
-\* deterministic (same input → same output → same bytes)
+* deterministic (same input → same output → same bytes)
 
-\* schema-constrained (fail-closed validation)
+* schema-constrained (fail-closed validation)
 
-\* non-authoritative (explicitly marked)
+* non-authoritative (explicitly marked)
 
-\* read-only relationship to A
+* read-only relationship to A
 
-\* no mutation, no repair, no inference
-
-
-
-\---
+* no mutation, no repair, no inference
 
 
 
-\## 🧱 Current Capabilities (v1)
+---
 
 
 
-\### Duplicate Candidate Detection
+## 🧱 Current Capabilities (v1)
+
+
+
+### Duplicate Candidate Detection
 
 
 
@@ -146,21 +146,21 @@ Each candidate:
 
 
 
-\* pairwise (claim-to-claim)
+* pairwise (claim-to-claim)
 
-\* explainable (explicit reasons)
+* explainable (explicit reasons)
 
-\* non-authoritative
+* non-authoritative
 
-\* deterministic identity
-
-
-
-\---
+* deterministic identity
 
 
 
-\### Multiplicity Lens (view only)
+---
+
+
+
+### Multiplicity Lens (view only)
 
 
 
@@ -172,11 +172,11 @@ Reveals:
 
 
 
-\* persistence of similarity
+* persistence of similarity
 
-\* emergence and disappearance
+* emergence and disappearance
 
-\* shifts in explanation
+* shifts in explanation
 
 
 
@@ -184,11 +184,11 @@ Does not create new artifacts.
 
 
 
-\---
+---
 
 
 
-\## 📁 Repository Structure
+## 📁 Repository Structure
 
 
 
@@ -210,11 +210,11 @@ schemas/
 
 
 
-\---
+---
 
 
 
-\## 🧠 Conceptual Model
+## 🧠 Conceptual Model
 
 
 
@@ -240,19 +240,19 @@ It is not:
 
 
 
-\* a correction system
+* a correction system
 
-\* a ranking system
+* a ranking system
 
-\* a decision system
-
-
-
-\---
+* a decision system
 
 
 
-\## ⚠️ Constraints (must hold)
+---
+
+
+
+## ⚠️ Constraints (must hold)
 
 
 
@@ -260,19 +260,19 @@ This repository must never:
 
 
 
-\* write to `mettleforge/`
+* write to `mettleforge/`
 
-\* import monorepo packages
+* import monorepo packages
 
-\* run inside core pipelines or services
+* run inside core pipelines or services
 
-\* influence runtime behavior of LaForge
+* influence runtime behavior of LaForge
 
-\* treat derived artifacts as authoritative
+* treat derived artifacts as authoritative
 
 
 
-\---
+---
 
 
 
@@ -296,7 +296,7 @@ python -m derived.duplicate\_candidates\_v1 \\
 
 
 
-\---
+---
 
 
 
@@ -308,21 +308,21 @@ All outputs:
 
 
 
-\* must pass schema validation
+* must pass schema validation
 
-\* must be byte-stable
+* must be byte-stable
 
-\* must include lineage
+* must include lineage
 
-\* must declare non-authoritative status
-
-
-
-\---
+* must declare non-authoritative status
 
 
 
-\## ∴ One-line Summary
+---
+
+
+
+## ∴ One-line Summary
 
 
 
