@@ -1,0 +1,33 @@
+{
+  "type": "DuplicateCandidateSet",
+  "schema_version": "v1",
+  "non_authoritative": true,
+  "lineage": {
+    "method": "duplicate_candidates_v1",
+    "threshold": 0.7,
+    "generated_at": "2026-01-01T00:00:00Z",
+    "source_artifact_count": 3
+  },
+  "candidates": [
+    {
+      "candidate_id": "b7f6d9a2c3e4f1a0",
+      "claim_refs": [
+        { "claim_id": "c1", "artifact_id": "a1" },
+        { "claim_id": "c2", "artifact_id": "a2" }
+      ],
+      "similarity_basis": "lexical",
+      "similarity_score": 0.83,
+      "reasons": [
+        "high_token_overlap",
+        "shared_normalized_phrase",
+        "shared_anchor_text"
+      ],
+      "component_scores": {
+        "token_overlap": 0.75,
+        "phrase_overlap": 0.66,
+        "anchor_overlap": 1.0,
+        "edit_similarity": 0.82
+      }
+    }
+  ]
+}

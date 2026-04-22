@@ -1,0 +1,3 @@
+{"claim_id": "c1", "artifact_id": "a1", "statement": "The forge preserves structure under load.", "normalized_statement": "forge preserves structure under load", "anchors": ["forge", "structure"]}
+{"claim_id": "c2", "artifact_id": "a2", "statement": "Structure is preserved under load by the forge.", "normalized_statement": "structure preserved under load forge", "anchors": ["forge", "structure"]}
+{"claim_id": "c3", "artifact_id": "a3", "statement": "The system observes without acting.", "normalized_statement": "system observes without acting", "anchors": ["system"]}
